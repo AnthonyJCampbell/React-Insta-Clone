@@ -12,3 +12,19 @@
     max-width: 5.5%;
     border-radius: 100%;
 }
+
+.lowerContainer {
+    margin: 5px 12px;
+}
+.clickContainer {
+    display: flex;
+    align-items: center;
+}
+.clickContainer i {
+    transform: scale(1.4);
+    margin: 5px 20px 10px 5px;
+}
+
+.lowerContainer h4 {
+    margin: 5px 0 8px;
+}

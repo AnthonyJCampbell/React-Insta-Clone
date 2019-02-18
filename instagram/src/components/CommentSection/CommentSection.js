@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './CommentSection.css';
 
 const CommentSection = ({ comments }) => {
     return (
-        <div>
+        <div className="commentSection">
             {comments.map((comment, idx) => {
                 return (
-                    <div key={idx}>
-                        <a href="#d"><h4>{comment.username}</h4></a>
-                        <p>{comment.text}</p>
+                    <div className="comment" key={idx}>
+                        <p>
+                            <a href="#d">{comment.username}</a>  {comment.text}
+                        </p>
                     </div>
                 );
             })}
             <div>
-                <input type="text" />
+                <input className="addComment" type="text" placeholder="Add a comment..." />
             </div>
         </div>
     );
