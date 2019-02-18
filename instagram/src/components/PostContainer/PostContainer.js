@@ -1,9 +1,11 @@
 import React from 'react';
+import CommentSection from './../CommentSection/CommentSection';
 
-const PostContainer = () => {
+const PostContainer = ({ idx, props }) => {
     return (
-        <div>
-            This is the post container
+        <div key={idx}>
+                <img src={`${props.imageUrl}`} alt="sd" />
+                <CommentSection comments={props.comments} />
         </div>
     );
 }

@@ -4,7 +4,6 @@ import './App.css';
 
 import SearchBar from './components/SearchBar/SearchBar';
 import PostContainer from './components/PostContainer/PostContainer';
-import CommentSection from './components/CommentSection/CommentSection';
 
 import dummyData from './dummy-data';
 
@@ -16,12 +15,9 @@ class App extends Component {
           <SearchBar />
         </header>
         <main>
-          {dummyData.map(item => {
+          {dummyData.map((item, idx) => {
             return (
-              <PostContainer>
-                <img src="" alt="sd" />
-                <CommentSection />
-              </PostContainer>          
+              <PostContainer key={idx} props={dummyData[idx]} />          
             );
           })}
         </main>
