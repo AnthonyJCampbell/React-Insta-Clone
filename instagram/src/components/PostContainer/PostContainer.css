@@ -1,0 +1,14 @@
+.PostContainer {
+    width: 99%;
+    margin: 0 auto;
+}
+.accountBar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.accountBar img {
+    margin: 10px 12px 10px 10px;
+    max-width: 5.5%;
+    border-radius: 100%;
+}

@@ -1,12 +1,20 @@
 import React from 'react';
 import CommentSection from './../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
+import './PostContainer.css';
 
 const PostContainer = ({ props }) => {
     return (
-        <div>
-                <img src={`${props.imageUrl}`} alt="sd" />
-                <CommentSection comments={props.comments} />
+        <div className="PostContainer">
+            <div className="accountBar"><img src={props.thumbnailUrl} alt={props.username}/><a href="google.com">{props.username}</a></div>   
+            <img src={`${props.imageUrl}`} alt="sd" />
+            <div className="clickContainer">
+                <i className="far fa-heart"></i>
+                <i class="far fa-comment"></i>
+            </div>
+
+            <h4>{props.likes} likes</h4>
+            <CommentSection comments={props.comments} />
         </div>
     );
 }

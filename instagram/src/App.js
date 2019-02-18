@@ -12,7 +12,7 @@ console.log(dummyData);
 class App extends Component {  
   render() {
     return (
-      <div>
+      <div className="App">
         <header>
           <SearchBar />
         </header>
