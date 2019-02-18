@@ -6,12 +6,17 @@
 
 body {
   background: royalblue;
+  transform: scale(.8);
 }
 .App {
+  transform: translateY(-280px);
   width: 100%;
-  max-width: 560px;
+  max-width: 610px;
   margin: 50px auto;
   background: #f9f9f9;
+  padding: 10px 10px;
+  border: 15px solid #333;
+  border-radius: 50px;
 }
 img {
   width: 100%;

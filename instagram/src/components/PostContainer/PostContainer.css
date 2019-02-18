@@ -6,6 +6,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+    font-weight: 700;
 }
 .accountBar img {
     margin: 10px 12px 10px 10px;
@@ -24,7 +25,14 @@
     transform: scale(1.4);
     margin: 5px 20px 10px 5px;
 }
+.fa-heart:hover {
+    color: red;
+}
 
 .lowerContainer h4 {
     margin: 5px 0 8px;
+    transition: 1s;
+}
+.lowerContainer h4:hover {
+    color: royalblue;
 }

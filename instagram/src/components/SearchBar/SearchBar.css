@@ -2,9 +2,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 15px 0;
+    padding: 15px 15px 10px;
     flex-wrap: wrap;
     text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 5px;
 }
 .left {
     transform: scale(1.1);

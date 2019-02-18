@@ -8,6 +8,10 @@
 
 .comment p a {
     font-weight: 700;
+    transition: 1s;
+}
+.comment p a:hover {
+    color: royalblue;
 }
 
 .addComment {
