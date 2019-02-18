@@ -7,6 +7,8 @@ import PostContainer from './components/PostContainer/PostContainer';
 
 import dummyData from './dummy-data';
 
+console.log(dummyData);
+
 class App extends Component {  
   render() {
     return (
@@ -25,5 +27,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
