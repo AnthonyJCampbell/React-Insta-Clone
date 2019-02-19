@@ -7,6 +7,20 @@ import PostContainer from './components/PostContainer/PostContainer';
 import dummyData from './dummy-data';
 
 class App extends Component {  
+  constructor() {
+    super();
+
+    this.state = {
+      data: [],
+    }
+  }
+  
+  componentDidMount () {
+    this.setState({
+      data: dummyData,
+    })
+  };
+
   render() {
     return (
       <div className="App">
@@ -14,9 +28,9 @@ class App extends Component {
           <SearchBar />
         </header>
         <main>
-          {dummyData.map((item, idx) => {
+          {this.state.data.map((item, idx) => {
             return (
-              <PostContainer key={idx} props={dummyData[idx]} />          
+              <PostContainer key={idx} props={this.state.data[idx]} />          
             );
           })}
         </main>
