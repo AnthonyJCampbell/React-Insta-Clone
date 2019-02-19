@@ -21,6 +21,14 @@ class App extends Component {
     })
   };
 
+  addComment = (comment, id) => {
+    this.setState(prevState => {
+      prevState.data[id].comments.push(comment);
+    })
+  } 
+
+  
+
   render() {
     return (
       <div className="App">
@@ -30,7 +38,7 @@ class App extends Component {
         <main>
           {this.state.data.map((item, idx) => {
             return (
-              <PostContainer key={idx} props={this.state.data[idx]} />          
+              <PostContainer key={idx} props={this.state.data[idx]} num={idx} addComment={this.addComment} />          
             );
           })}
         </main>
