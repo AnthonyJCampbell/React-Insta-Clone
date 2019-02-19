@@ -19,8 +19,13 @@ class CommentSection extends React.Component {
     submitHandler = event => {
         event.preventDefault();
         this.props.addComment({username: 'placeholder', text: this.state.commentContent}, this.props.num);
+        this.clearInput();
     }
     
+    clearInput = () => {
+        this.setState({ commentContent: ''});
+    }
+
     render() {
         return (
             <div className="commentSection">
@@ -34,7 +39,7 @@ class CommentSection extends React.Component {
                     );
                 })}
                 <form onSubmit={this.submitHandler}>
-                    <input  onChange={this.commentHandler} className="addComment" type="text" placeholder="Add a comment..." />
+                    <input  onChange={this.commentHandler} className="addComment" type="text" placeholder="Add a comment..." value={this.state.commentContent} />
                 </form>
             </div>
         );
