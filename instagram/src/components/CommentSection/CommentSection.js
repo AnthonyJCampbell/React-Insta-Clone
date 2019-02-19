@@ -16,9 +16,10 @@ class CommentSection extends React.Component {
         this.setState({ commentContent: e.target.value });
     };
 
-    // clickHandler = e => {
-    //     this.props.addComment(this.state.commentContent, this.props.num);
-    // }
+    submitHandler = event => {
+        event.preventDefault();
+        this.props.addComment({username: 'placeholder', text: this.state.commentContent}, this.props.num);
+    }
     
     render() {
         return (
@@ -32,10 +33,9 @@ class CommentSection extends React.Component {
                         </div>
                     );
                 })}
-                <div>
-                    <input onChange={this.commentHandler}  className="addComment" type="text" placeholder="Add a comment..." />
-                    <button onClick={() => this.props.addComment({username: 'placeholder', text: 'Hello World'}, 0)}>Click me to solve the fucking bug</button>
-                </div>
+                <form onSubmit={this.submitHandler}>
+                    <input  onChange={this.commentHandler} className="addComment" type="text" placeholder="Add a comment..." />
+                </form>
             </div>
         );
     }

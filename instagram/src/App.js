@@ -22,8 +22,9 @@ class App extends Component {
   };
 
   addComment = (comment, id) => {
+    console.log(comment);
     this.setState(prevState => {
-      prevState.data[id].comments.push(comment);
+      return prevState.data[id].comments.push(comment);
     })
   } 
 
