@@ -26,7 +26,7 @@ class App extends Component {
       return prevState.data[id].comments.push(comment);
     })
   }
-
+ 
   // !!! I know we are not to mutate state directly. This is a temporary work-around until I can talk with instructors to resolve variable this.setState();
   addLike = (id) => {
     this.setState((prevState) => {
