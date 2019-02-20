@@ -5,11 +5,9 @@
 }
 
 body {
-  background: royalblue;
-  transform: scale(.8);
+  background: white;
 }
 .App {
-  transform: translateY(-280px);
   width: 100%;
   max-width: 610px;
   margin: 50px auto;
@@ -25,6 +23,6 @@ img {
 
 i:hover {
   transition: 1s;
-  transform: scale(1.25);
+  transform: scale(1.4);
   color: royalblue;
 }

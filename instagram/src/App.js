@@ -22,13 +22,12 @@ class App extends Component {
   };
 
   addComment = (comment, id) => {
-    console.log(comment);
     this.setState(prevState => {
       return prevState.data[id].comments.push(comment);
     })
   }
 
-  // I know we are not to mutate state directly. This is a temporary work-around until I can talk with instructors to resolve variable this.setState();
+  // !!! I know we are not to mutate state directly. This is a temporary work-around until I can talk with instructors to resolve variable this.setState();
   addLike = (id) => {
     let likes = this.state.data[id].likes + 1;
     this.state.data[id].likes = likes;
@@ -42,7 +41,6 @@ class App extends Component {
           return p;
         }
       });
-      console.log(posts);
       return this.setState({ data: posts });
     }
     else {
