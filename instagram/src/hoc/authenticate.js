@@ -1,14 +1,23 @@
 import React from 'react';
 
-const authenticate = (Component) => {
-    return class AppWithAuthentication extends React.Component {
+const Authenticate = App =>
+    // eslint-disable-next-line
+    class extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                loggedIn: true,
+            }
+        }
         render() {
-            return (
-                <Component />
-            )
+            if (this.state.loggedIn === true) {
+                return <App />
+            }
+            return "Hello"
         }
     }
-}
+
+export default Authenticate;
 
 
 
