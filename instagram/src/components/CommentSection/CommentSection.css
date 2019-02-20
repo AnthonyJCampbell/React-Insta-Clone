@@ -20,6 +20,7 @@
     font-size: 1em;
     line-height: 1.4em;
     text-align: left;
+    margin-top: 5px;
     padding: 2px 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
@@ -28,5 +29,7 @@
     color: black;
     border-radius: 15px;
     outline: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    background: #fcfcfc;
+    border-left: 1px solid rgba(0, 0, 0, 0.4);
+    border-right: 1px solid rgba(0, 0, 0, 0.4);
 }
