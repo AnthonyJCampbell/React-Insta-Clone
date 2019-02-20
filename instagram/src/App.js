@@ -66,6 +66,7 @@ class App extends Component {
           data={this.state.data}
           addComment= {this.addComment}
           addLike= {this.addLike}
+          logOut={this.props.logOut}
         />
       </div>
     );

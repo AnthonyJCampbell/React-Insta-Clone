@@ -3,11 +3,11 @@ import PostContainer from './PostContainer';
 
 import SearchBar from './../SearchBar/SearchBar';
 
-const PostsPage = ({ filterPosts, data, addComment , addLike }) => {
+const PostsPage = ({ filterPosts, data, addComment , addLike, logOut }) => {
   return (
     <div>
       <header>
-        <SearchBar filterPosts={filterPosts} />
+        <SearchBar filterPosts={filterPosts} logOut={logOut} />
       </header>
       <main>
         {data.map((item, idx) => {

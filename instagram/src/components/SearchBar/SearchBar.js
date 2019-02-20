@@ -1,7 +1,7 @@
 import React from 'react';
 import './SearchBar.css';
 
-const SearchBar = ({ filterPosts }) => {
+const SearchBar = ({ filterPosts, logOut }) => {
     const changeHandler = (event) => {
         return filterPosts(event.target.value);
     }
@@ -16,7 +16,7 @@ const SearchBar = ({ filterPosts }) => {
             <div className="right">
                 <i className="far fa-compass"></i>
                 <i className="far fa-heart"></i>
-                <i className="far fa-user"></i>
+                <i onClick={logOut} className="far fa-user"></i>
             </div>
         </div>
     );
