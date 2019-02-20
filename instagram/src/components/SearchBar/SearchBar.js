@@ -12,7 +12,7 @@ const SearchBar = ({ filterPosts, logOut }) => {
                 <i className="fab fa-instagram"></i>
                 <a href="google.com"><h1> | INSTAGRAM</h1></a>
             </div>
-            <input onChange={changeHandler} type="text" placeholder="Search" />
+            <input id="search" onChange={changeHandler} type="text" placeholder="Search" />
             <div className="right">
                 <i className="far fa-compass"></i>
                 <i className="far fa-heart"></i>

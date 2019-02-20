@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './CommentSection.css';
 
+const myName = localStorage.getItem('username');
+
 class CommentSection extends React.Component {
     constructor(props) {
         super(props);
@@ -11,14 +13,16 @@ class CommentSection extends React.Component {
             commentContent: '',
         }
     }
-    
+
+
     commentHandler = e => {
         this.setState({ commentContent: e.target.value });
     };
 
     submitHandler = event => {
         event.preventDefault();
-        this.props.addComment({username: 'placeholder', text: this.state.commentContent}, this.props.num);
+        
+        this.props.addComment({username: myName.toLowerCase(), text: this.state.commentContent}, this.props.num);
         this.clearInput();
     }
     

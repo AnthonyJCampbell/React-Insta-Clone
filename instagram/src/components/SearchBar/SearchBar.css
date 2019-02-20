@@ -27,7 +27,7 @@ h1 {
 i {
     transform: scale(1.2);
 }
-i:hover, input:hover, input:focus, input:active {
+i:hover, #search:hover, #search:focus, #search:active {
     transition: 1s;
     transform: scale(1.25);
     color: royalblue;
@@ -37,7 +37,8 @@ i:hover, input:hover, input:focus, input:active {
 i:hover {
     transform: scale(1.45);
 }
-input {
+#search {
+    
     transition: 1s;
     font-size: 1em;
     text-align: center;
