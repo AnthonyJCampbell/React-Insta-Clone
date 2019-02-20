@@ -39,6 +39,15 @@ class App extends Component {
     this.state.filter()
   }
 
+  searchPostsHandler = input => {
+    const posts = this.state.posts.filter(p => {
+      if (p.username.includes(input)) {
+        return p;
+      }
+    });
+    this.setState({ filteredPosts: posts });
+  };
+
   render() {
     return (
       <div className="App">
