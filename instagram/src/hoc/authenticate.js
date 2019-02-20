@@ -1,4 +1,5 @@
 import React from 'react';
+import Login from './../components/Login/Login'
 
 const Authenticate = App =>
     // eslint-disable-next-line
@@ -6,14 +7,14 @@ const Authenticate = App =>
         constructor(props) {
             super(props);
             this.state = {
-                loggedIn: true,
+                loggedIn: false,
             }
         }
         render() {
             if (this.state.loggedIn === true) {
                 return <App />
             }
-            return "Hello"
+            return <Login />
         }
     }
 
