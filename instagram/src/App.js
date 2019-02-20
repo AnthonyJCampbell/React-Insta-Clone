@@ -29,10 +29,18 @@ class App extends Component {
 
   // !!! I know we are not to mutate state directly. This is a temporary work-around until I can talk with instructors to resolve variable this.setState();
   addLike = (id) => {
-    let likes = this.state.data[id].likes + 1;
-    this.state.data[id].likes = likes;
-    this.forceUpdate();
-  };
+    this.setState((prevState) => {
+      return {
+        data: prevState.data.map((post, idx) => {
+          if (idx === id) {
+            post.likes = post.likes + 1; 
+          }
+          
+          return post;
+        })
+      }
+    })
+  }
 
   filterPosts = input => {
     if (input.length > 0) {
