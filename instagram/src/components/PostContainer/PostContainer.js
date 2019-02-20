@@ -6,6 +6,8 @@ import './PostContainer.css';
 
 const PostContainer = ({ props, num, addComment, addLike }) => {
     
+
+    
     const likeHandler = (id) => {
         return addLike(id);
     }

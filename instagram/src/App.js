@@ -28,32 +28,22 @@ class App extends Component {
     })
   }
 
+  // I know we are not to mutate state directly. This is a temporary work-around until I can talk with instructors to resolve variable this.setState();
   addLike = (id) => {
     let likes = this.state.data[id].likes + 1;
     this.state.data[id].likes = likes;
     this.forceUpdate();
-    console.log(likes)
   };
 
-  
-  // this.setState((prevState) => {
-  //   if (id !== this.state.data[id].num) {
-  //     return {
-  //       likes: this.state.data[id].likes + 1
-  //     }
-  //   }
-  //   else {
-  //     return prevState.data[id];
-  //   }
-  // })
-
-
+  filterPosts = (input) => {
+    this.state.filter()
+  }
 
   render() {
     return (
       <div className="App">
         <header>
-          <SearchBar />
+          <SearchBar filterPosts={this.filterPosts} />
         </header>
         <main>
           {this.state.data.map((item, idx) => {
