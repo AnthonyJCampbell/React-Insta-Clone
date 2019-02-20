@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: white;
+  }
+  .App {
+    width: 100%;
+    max-width: 610px;
+    margin: 50px auto;
+    background: #f9f9f9;
+    padding: 10px 10px;
+    border: 15px solid #333;
+    border-radius: 50px;
+  }
+  img {
+    width: 100%;
+  }
+  
+  
+  i:hover {
+    transition: 1s;
+    transform: scale(1.4);
+    color: royalblue;
+  }
+  
