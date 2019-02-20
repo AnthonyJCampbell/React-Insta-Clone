@@ -26,9 +26,25 @@ class App extends Component {
     this.setState(prevState => {
       return prevState.data[id].comments.push(comment);
     })
-  } 
+  }
+
+  addLike = (id) => {
+    this.setState = {  }
+  }
 
   
+  // this.setState((prevState) => {
+  //   if (id !== this.state.data[id].num) {
+  //     return {
+  //       likes: this.state.data[id].likes + 1
+  //     }
+  //   }
+  //   else {
+  //     return prevState.data[id];
+  //   }
+  // })
+
+
 
   render() {
     return (
@@ -39,7 +55,11 @@ class App extends Component {
         <main>
           {this.state.data.map((item, idx) => {
             return (
-              <PostContainer key={idx} props={this.state.data[idx]} num={idx} addComment={this.addComment} />          
+              <PostContainer key={idx} 
+                props={this.state.data[idx]} 
+                num={idx} 
+                addComment={this.addComment}
+                addLike={this.addLike} />          
             );
           })}
         </main>
