@@ -35,18 +35,23 @@ class App extends Component {
     this.forceUpdate();
   };
 
-  filterPosts = (input) => {
-    this.state.filter()
-  }
-
-  searchPostsHandler = input => {
-    const posts = this.state.posts.filter(p => {
-      if (p.username.includes(input)) {
-        return p;
-      }
-    });
-    this.setState({ filteredPosts: posts });
+  filterPosts = input => {
+    if (input.length > 0) {
+      const posts = this.state.data.filter(p => {
+        if (p.username.includes(input)) {
+          return p;
+        }
+      });
+      console.log(posts);
+      return this.setState({ data: posts });
+    }
+    else {
+      this.setState({
+        data: dummyData,
+      })
+    }
   };
+
 
   render() {
     return (
