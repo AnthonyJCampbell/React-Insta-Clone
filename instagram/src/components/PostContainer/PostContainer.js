@@ -3,19 +3,27 @@ import CommentSection from './../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
 import './PostContainer.css';
 
-const PostContainer = ({ props }) => {
+
+const PostContainer = ({ props, num, addComment, addLike }) => {
+    
+
+    
+    const likeHandler = (id) => {
+        return addLike(id);
+    }
+    
     return (
         <div className="PostContainer">
             <div className="accountBar"><img src={props.thumbnailUrl} alt={props.username}/><a href="google.com">{props.username}</a></div>   
             <img src={`${props.imageUrl}`} alt="sd" />
             <div className="lowerContainer" >
                 <div className="clickContainer">
-                    <i className="far fa-heart"></i>
+                    <i onClick={() => likeHandler(num)} className="far fa-heart"></i>
                     <i className="far fa-comment"></i>
                 </div>
 
                 <h4>{props.likes} likes</h4>
-                <CommentSection comments={props.comments} />
+                <CommentSection comments={props.comments} num={num} addComment={addComment} />
             </div>
         </div>
     );

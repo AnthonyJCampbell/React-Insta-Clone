@@ -25,6 +25,9 @@
     transform: scale(1.4);
     margin: 5px 20px 10px 5px;
 }
+.clickContainer i:hover{
+    transform: scale(1.8);
+}
 .fa-heart:hover {
     color: red;
 }
