@@ -29,8 +29,11 @@ class App extends Component {
   }
 
   addLike = (id) => {
-    this.setState = {  }
-  }
+    let likes = this.state.data[id].likes + 1;
+    this.state.data[id].likes = likes;
+    this.forceUpdate();
+    console.log(likes)
+  };
 
   
   // this.setState((prevState) => {
