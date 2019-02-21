@@ -1,8 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './CommentSection.css';
+
+import styled from 'styled-components';
 
 const myName = localStorage.getItem('username').toLowerCase();
+
+const StyledCommentSection = styled.div`
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    div {
+        margin: 8px 0 8px 12px;
+        p {
+            a {
+                font-weight: 700;
+                transition: 1s;
+                margin: 5px 0 8px; 
+                &:hover {
+                    color: royalblue;
+                }
+            }
+        }
+    }
+    form {
+        input {
+            border: none;
+            width: 100%;
+            font-size: 1em;
+            line-height: 1.4em;
+            text-align: left;
+            margin-top: 5px;
+            padding: 2px 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0);
+            
+            &:hover, &:focus, &:active {
+                transform: scale(1);
+                color: black;
+                border-radius: 15px;
+                outline: none;
+                background: #fcfcfc;
+                border-left: 1px solid rgba(0, 0, 0, 0.4);
+                border-right: 1px solid rgba(0, 0, 0, 0.4);
+            }
+        }
+    }
+`;
 
 class CommentSection extends React.Component {
     constructor(props) {
@@ -32,7 +72,7 @@ class CommentSection extends React.Component {
 
     render() {
         return (
-            <div className="commentSection">
+            <StyledCommentSection >
                 {this.state.comments.map((comment, idx) => {
                     return (
                         <div className="comment" key={idx}>
@@ -50,7 +90,7 @@ class CommentSection extends React.Component {
                         placeholder="Add a comment..." 
                         value={this.state.commentContent} />
                 </form>
-            </div>
+            </StyledCommentSection>
         );
     }
 } 
