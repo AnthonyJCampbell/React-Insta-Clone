@@ -1,26 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Comment from './Comment';
 import styled from 'styled-components';
 
 const myName = localStorage.getItem('username').toLowerCase();
 
 const StyledCommentSection = styled.div`
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    div {
-        margin: 8px 0 8px 12px;
-        p {
-            a {
-                font-weight: 700;
-                transition: 1s;
-                margin: 5px 0 8px; 
-                &:hover {
-                    color: royalblue;
-                }
-            }
-        }
-    }
     form {
+        margin-bottom: 12px;
         input {
             border: none;
             width: 100%;
@@ -75,11 +64,11 @@ class CommentSection extends React.Component {
             <StyledCommentSection >
                 {this.state.comments.map((comment, idx) => {
                     return (
-                        <div className="comment" key={idx}>
+                        <Comment key={idx}>
                             <p>
                                 <a href="google.com">{comment.username}</a>  {comment.text}
                             </p>
-                        </div>
+                        </Comment>
                     );
                 })}
                 <form onSubmit={this.submitHandler}>

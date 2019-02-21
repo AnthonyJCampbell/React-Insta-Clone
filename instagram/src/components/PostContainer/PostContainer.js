@@ -54,7 +54,7 @@ const PostContainer = ({ props, num, addComment, addLike }) => {
         <StyledPostContainer className="PostContainer">
             <AccountBar className="accountBar">
                 <img src={props.thumbnailUrl} alt={props.username}/><a href="google.com">{props.username}</a>
-            </AccountBar>   
+            </AccountBar>
             <img src={`${props.imageUrl}`} alt="sd" />
             <Lowercontainer >
                 <div className="clickContainer">

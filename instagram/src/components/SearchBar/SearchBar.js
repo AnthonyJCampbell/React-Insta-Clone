@@ -33,7 +33,7 @@ const Left = styled.div`
     }
     h1 {
     font-size: 1em;
-    margin-left: 10px;
+    margin-left: 14px;
     }
 `;
 
