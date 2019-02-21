@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './CommentSection.css';
 
-const myName = localStorage.getItem('username');
+const myName = localStorage.getItem('username').toLowerCase();
 
 class CommentSection extends React.Component {
     constructor(props) {
@@ -22,7 +22,7 @@ class CommentSection extends React.Component {
     submitHandler = event => {
         event.preventDefault();
         
-        this.props.addComment({username: myName.toLowerCase(), text: this.state.commentContent}, this.props.num);
+        this.props.addComment({username: myName, text: this.state.commentContent}, this.props.num);
         this.clearInput();
     }
     
