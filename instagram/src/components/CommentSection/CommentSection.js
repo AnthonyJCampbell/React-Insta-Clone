@@ -1,8 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './CommentSection.css';
 
-const myName = localStorage.getItem('username');
+import Comment from './Comment';
+import styled from 'styled-components';
+
+const myName = localStorage.getItem('username').toLowerCase();
+
+const StyledCommentSection = styled.div`
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    form {
+        margin-bottom: 12px;
+        input {
+            border: none;
+            width: 100%;
+            font-size: 1em;
+            line-height: 1.4em;
+            text-align: left;
+            margin-top: 5px;
+            padding: 2px 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0);
+            
+            &:hover, &:focus, &:active {
+                transform: scale(1);
+                color: black;
+                border-radius: 15px;
+                outline: none;
+                background: #fcfcfc;
+                border-left: 1px solid rgba(0, 0, 0, 0.4);
+                border-right: 1px solid rgba(0, 0, 0, 0.4);
+            }
+        }
+    }
+`;
 
 class CommentSection extends React.Component {
     constructor(props) {
@@ -22,7 +51,7 @@ class CommentSection extends React.Component {
     submitHandler = event => {
         event.preventDefault();
         
-        this.props.addComment({username: myName.toLowerCase(), text: this.state.commentContent}, this.props.num);
+        this.props.addComment({username: myName, text: this.state.commentContent}, this.props.num);
         this.clearInput();
     }
     
@@ -32,14 +61,14 @@ class CommentSection extends React.Component {
 
     render() {
         return (
-            <div className="commentSection">
+            <StyledCommentSection >
                 {this.state.comments.map((comment, idx) => {
                     return (
-                        <div className="comment" key={idx}>
+                        <Comment key={idx}>
                             <p>
                                 <a href="google.com">{comment.username}</a>  {comment.text}
                             </p>
-                        </div>
+                        </Comment>
                     );
                 })}
                 <form onSubmit={this.submitHandler}>
@@ -50,7 +79,7 @@ class CommentSection extends React.Component {
                         placeholder="Add a comment..." 
                         value={this.state.commentContent} />
                 </form>
-            </div>
+            </StyledCommentSection>
         );
     }
 } 

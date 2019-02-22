@@ -9,7 +9,7 @@
 
 - By now you have been working on laying out your application, adding functionality and even building out a login system that only shows your app if a user is logged in.
 - Today we're going to be adding `styled-components` to our application. For more on the motivation behind this approach watch this [styled-components](https://youtu.be/bIK2NwoK9xk).
-
+ 
 #### Tasks (Day III)
 
 - Try and replace all of the styles you have previously written. Change everything to be a Styled Component. (Except for where you need to reference your icon classNames.)

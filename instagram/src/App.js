@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
+import styled from 'styled-components';
 
 import PostsPage from './components/PostContainer/PostsPage';
 import Authenticate from './hoc/authenticate';
 
 import dummyData from './dummy-data';
+
+const StyledApp = styled.div`
+  width: 100%;
+  max-width: 610px;
+  min-height: 800px;
+  margin: 50px auto;
+  background: white;
+  padding: 10px 10px;
+  border: 15px solid #333;
+  border-radius: 50px;
+`;
 
 class App extends Component {  
   constructor() {
@@ -60,7 +72,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <StyledApp>
         <PostsPage 
           filterPosts={this.filterPosts}
           data={this.state.data}
@@ -68,7 +80,7 @@ class App extends Component {
           addLike= {this.addLike}
           logOut={this.props.logOut}
         />
-      </div>
+      </StyledApp>
     );
   }
 }
