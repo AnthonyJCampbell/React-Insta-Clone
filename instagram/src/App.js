@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import SearchBar from './components/SearchBar/SearchBar';
-import PostContainer from './components/PostContainer/PostContainer';
+import PostsPage from './components/PostContainer/PostsPage';
+import Authenticate from './hoc/authenticate';
 
 import dummyData from './dummy-data';
 
@@ -27,7 +27,6 @@ class App extends Component {
     })
   }
 
-  // !!! I know we are not to mutate state directly. This is a temporary work-around until I can talk with instructors to resolve variable this.setState();
   addLike = (id) => {
     this.setState((prevState) => {
       return {
@@ -62,22 +61,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-          <SearchBar filterPosts={this.filterPosts} />
-        </header>
-        <main>
-          {this.state.data.map((item, idx) => {
-            return (
-              <PostContainer key={idx} 
-                props={this.state.data[idx]} 
-                num={idx} 
-                addComment={this.addComment}
-                addLike={this.addLike} />          
-            );
-          })}
-        </main>
+        <PostsPage 
+          filterPosts={this.filterPosts}
+          data={this.state.data}
+          addComment= {this.addComment}
+          addLike= {this.addLike}
+          logOut={this.props.logOut}
+        />
       </div>
     );
   }
 }
-export default App;
+// I'm passing Authenticate our <App /> component. So, when it gets pulled into another component, the result will be <App /> WITH all the the changes impart by Authenticate
+export default Authenticate(App);
